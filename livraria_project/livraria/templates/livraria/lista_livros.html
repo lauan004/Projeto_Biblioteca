@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ept-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Livros</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Lista de Livros</h1>
+        <ul>
+            {% for livro in livros %}
+                <li>
+                    <div class="livro">
+                        <h2><a href="{% url 'detalhes_livro' livro.id %}">{{ livro.titulo }}</a></h2>
+                        
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+</body>
+</html>
