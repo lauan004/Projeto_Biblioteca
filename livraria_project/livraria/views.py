@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Livro
 from .models import Autor
+from .forms import LivroForm
 
 
 def lista_livros(request):
@@ -13,4 +14,15 @@ def detalhes_livro(request, livro_id):
 
 def home(request):
     return render(request, 'livraria/home.html')
-# Create your views here.
+
+def adicionar_livro(request):
+    if request.method == 'POST':
+        form = LivroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('lista_livros')  # Redireciona para a lista de livros após a inclusão
+    else:
+        form = LivroForm()
+
+    return render(request, 'livraria/adicionar_livro.html', {'form': form})
+

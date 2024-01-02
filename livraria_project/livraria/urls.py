@@ -1,4 +1,3 @@
-# livraria/urls.py
 from django.urls import path
 from .views import home, lista_livros, detalhes_livro
 from django.conf import settings

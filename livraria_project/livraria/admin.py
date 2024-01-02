@@ -4,5 +4,3 @@ from .models import Autor, Livro
 admin.site.register(Autor)
 admin.site.register(Livro)
 
-
-# Register your models here.

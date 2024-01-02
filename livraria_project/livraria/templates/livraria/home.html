@@ -9,8 +9,71 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
     {% endblock %}
 </head>
-<body>
+
+
+<header>
     <h1>Bem-vindo à Minha Livraria!</h1>
-    <!-- Adicione o conteúdo desejado aqui -->
-</body>
+</header>
+
+<nav>
+    <a class="botao" href="{% url 'lista_livros' %}">Lista de Livros</a>
+    <a class="botao" href="#">Sobre</a>
+    <a class="botao" href="#">Contato</a>
+</nav>
+
+<section class="centrado">
+    <h2>Este é um site ilustrativo com o intuito de trazer estilo para a pagina inicial de meu projeto Django</h2>
+    <p>A leitura abre nossos olhos, nossa mente e expande o nosso conhecimento.</p>
+    <img src="{% static 'imagens\biblioteca.webp' %}" alt="Imagem Ilustrativa">
+</section>
+
+<style>
+
+section.centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    background-color: #190019;
+    color: #FBE4D8;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #854F6C;
+    padding: 10px;
+    text-align: center;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #854F6C; /* Cor de fundo roxa */
+    color: white; /* Cor do texto branco */
+    text-decoration: none; /* Sem sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+.botao:hover {
+    background-color: #2B124C; /* Cor de fundo roxa mais escura ao passar o mouse */
+}
+
+section {
+    padding: 10px;
+    
+}
+
+img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura da seção */
+    max-height: 300px; /* Define uma altura máxima para a imagem */
+    margin-top: 0px; /* Adiciona um espaço superior à imagem */
+}
+
+</style>
 </html>
